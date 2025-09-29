@@ -1,0 +1,92 @@
+:root{
+  --fondo:#f7f8fb;
+  --panel:#ffffff;
+  --primario:#2b6cb0;
+  --sec:#4a5568;
+  --borde:#e2e8f0;
+  --acento:#f6ad55;
+}
+
+*{box-sizing:border-box;font-family:Inter, "Segoe UI", Roboto, Arial, sans-serif}
+body{
+  margin:0;
+  background:var(--fondo);
+  color:var(--sec);
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+header{
+  background:linear-gradient(90deg,var(--primario),#38a169);
+  color:white;padding:16px;
+}
+header h1{margin:0 0 6px 0;font-size:1.3rem}
+.contenedor{
+  display:flex;
+  gap:16px;
+  padding:16px;
+  flex:1;
+}
+.panel-izquierdo{
+  width:320px;
+  background:var(--panel);
+  border:1px solid var(--borde);
+  border-radius:8px;
+  padding:12px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  height:fit-content;
+}
+.panel-derecho{
+  flex:1;
+  background:var(--panel);
+  border:1px solid var(--borde);
+  border-radius:8px;
+  padding:12px;
+  min-height:400px;
+  overflow:auto;
+}
+.panel-crear label{display:block;margin-top:8px;font-weight:600}
+.panel-crear input,.panel-crear select{width:100%;padding:8px;margin-top:4px;border-radius:6px;border:1px solid var(--borde)}
+button{
+  margin-top:10px;
+  padding:8px 10px;
+  border-radius:8px;
+  border:none;
+  cursor:pointer;
+  background:var(--primario);
+  color:white;
+  font-weight:600;
+}
+button.secondary{
+  background:#edf2f7;color:var(--sec);border:1px solid var(--borde)
+}
+.oculto{display:none}
+
+/* árbol */
+.arbol ul{list-style:none;padding-left:20px;margin:6px 0}
+.elemento{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:6px 8px;
+  border-radius:6px;
+}
+.elemento:hover{background:#f1f5f9}
+.icono{
+  width:20px;height:20px;display:inline-flex;align-items:center;justify-content:center;border-radius:4px;font-size:11px;background:#edf2f7;border:1px solid var(--borde)
+}
+.nombre{font-weight:600}
+.detalle-peq{font-size:0.85rem;color:#5a6470;margin-left:auto}
+
+/* detalles */
+.detalles{border-top:1px dashed var(--borde);padding-top:8px;margin-top:8px}
+.detalles input{padding:6px;width:100%;border-radius:6px;border:1px solid var(--borde)}
+.acciones-detalles{display:flex;gap:8px;margin-top:8px}
+
+/* responsive */
+@media (max-width:900px){
+  .contenedor{flex-direction:column}
+  .panel-izquierdo{width:100%}
+}
